@@ -1,0 +1,612 @@
+/*==========================================================
+    LSPD TOOLKIT
+==========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#0d1117;
+
+    --panel:#161b22;
+
+    --panel2:#1b222c;
+
+    --border:#30363d;
+
+    --borderHover:#4a5c72;
+
+    --blue:#2f81f7;
+
+    --blueHover:#1f6feb;
+
+    --green:#2ea043;
+
+    --red:#da3633;
+
+    --text:#f0f6fc;
+
+    --muted:#8b949e;
+
+    --radius:8px;
+
+    --transition:.18s;
+
+}
+
+
+
+/*==========================================================
+    BODY
+==========================================================*/
+
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:Segoe UI,Arial,sans-serif;
+
+    min-height:100vh;
+
+    padding:24px;
+
+}
+
+
+
+/*==========================================================
+    APP
+==========================================================*/
+
+.container{
+
+    width:100%;
+
+    max-width:980px;
+
+    margin:auto;
+
+}
+
+
+
+/*==========================================================
+    HEADER
+==========================================================*/
+
+header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:22px;
+
+}
+
+.logo{
+
+    width:64px;
+
+    user-select:none;
+
+    pointer-events:none;
+
+}
+
+.header-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.header-text h1{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    letter-spacing:.3px;
+
+}
+
+.header-text p{
+
+    margin-top:4px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+}
+
+
+
+/*==========================================================
+    CARDS
+==========================================================*/
+
+.card,
+.output{
+
+    background:var(--panel);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    padding:20px;
+
+    margin-bottom:18px;
+
+    box-shadow:
+
+        0 10px 30px rgba(0,0,0,.30);
+
+}
+
+
+
+/*==========================================================
+    OUTPUT HEADER
+==========================================================*/
+
+.output-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:16px;
+
+}
+
+.output-header h2{
+
+    font-size:16px;
+
+    font-weight:600;
+
+}
+
+
+
+/*==========================================================
+    FORM
+==========================================================*/
+
+.form-group{
+
+    margin-bottom:16px;
+
+}
+
+.form-group:last-child{
+
+    margin-bottom:0;
+
+}
+
+label{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    letter-spacing:.6px;
+
+}
+
+
+
+/*==========================================================
+    SELECT
+==========================================================*/
+
+select{
+
+    width:100%;
+
+    height:42px;
+
+    padding:0 42px 0 14px;
+
+    background:var(--panel2);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    border-radius:6px;
+
+    font-size:14px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    -moz-appearance:none;
+
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='%238b949e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+
+    background-repeat:no-repeat;
+
+    background-position:right 16px center;
+
+}
+
+select:hover{
+
+    border-color:var(--borderHover);
+
+}
+
+select:focus{
+
+    outline:none;
+
+    border-color:var(--blue);
+
+    box-shadow:0 0 0 3px rgba(47,129,247,.15);
+
+}
+/*==========================================================
+    COPY BUTTON
+==========================================================*/
+
+#copyBtn{
+
+    min-width:90px;
+
+    height:34px;
+
+    padding:0 16px;
+
+    border:none;
+
+    border-radius:6px;
+
+    background:var(--blue);
+
+    color:#fff;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .18s ease;
+
+}
+
+#copyBtn:hover{
+
+    background:var(--blueHover);
+
+    transform:translateY(-1px);
+
+}
+
+#copyBtn:active{
+
+    transform:translateY(0);
+
+}
+
+#copyBtn.copied{
+
+    background:var(--green);
+
+}
+
+
+
+/*==========================================================
+    OUTPUT
+==========================================================*/
+
+textarea{
+
+    width:100%;
+
+    min-height:300px;
+
+    resize:vertical;
+
+    background:var(--panel2);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    border-radius:6px;
+
+    padding:16px;
+
+    font-family:Consolas,"Cascadia Code","Courier New",monospace;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    transition:var(--transition);
+
+}
+
+textarea:focus{
+
+    outline:none;
+
+    border-color:var(--blue);
+
+    box-shadow:0 0 0 3px rgba(47,129,247,.15);
+
+}
+
+
+
+/*==========================================================
+    SCROLLBAR
+==========================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--panel);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#46566b;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#5a6d84;
+
+}
+
+
+
+/*==========================================================
+    TRANSITIONS
+==========================================================*/
+
+button,
+select,
+textarea{
+
+    transition:all .18s ease;
+
+}
+
+
+
+/*==========================================================
+    ANIMATIONS
+==========================================================*/
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(8px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.form-group{
+
+    animation:fadeUp .18s ease;
+
+}
+
+
+
+/*==========================================================
+    PLACEHOLDER
+==========================================================*/
+
+textarea::placeholder{
+
+    color:var(--muted);
+
+}
+
+
+
+/*==========================================================
+    MOBILE
+==========================================================*/
+
+@media(max-width:768px){
+
+    body{
+
+        padding:14px;
+
+    }
+
+    .container{
+
+        max-width:100%;
+
+    }
+
+    header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:12px;
+
+    }
+
+    .logo{
+
+        width:56px;
+
+    }
+
+    .header-text h1{
+
+        font-size:21px;
+
+    }
+
+    .header-text p{
+
+        font-size:12px;
+
+    }
+
+    .card,
+    .output{
+
+        padding:16px;
+
+    }
+
+    .output-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:12px;
+
+    }
+
+    #copyBtn{
+
+        width:100%;
+
+    }
+
+    textarea{
+
+        min-height:240px;
+
+    }
+
+}
+
+
+
+/*==========================================================
+    LARGE DISPLAYS
+==========================================================*/
+
+@media(min-width:1200px){
+
+    .container{
+
+        max-width:1050px;
+
+    }
+
+}
+
+
+
+/*==========================================================
+    FUTURE MODULE CARDS
+==========================================================*/
+
+.module-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+
+    gap:18px;
+
+}
+
+.module-card{
+
+    background:var(--panel);
+
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    padding:18px;
+
+    transition:.2s;
+
+    cursor:pointer;
+
+}
+
+.module-card:hover{
+
+    border-color:var(--blue);
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/*==========================================================
+    FOOTER
+==========================================================*/
+
+.footer{
+
+    margin-top:20px;
+
+    text-align:center;
+
+    color:var(--muted);
+
+    font-size:12px;
+
+}
